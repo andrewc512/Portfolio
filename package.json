@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.5.4",
     "next": "14.2.11",
     "react": "^18",
     "react-dom": "^18",
+    "react-element-to-jsx-string": "^15.0.0",
     "react-rotating-text": "^1.4.1",
-    "react-typed": "^2.0.12"
+    "react-typed": "^2.0.12",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",
