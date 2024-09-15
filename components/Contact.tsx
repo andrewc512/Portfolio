@@ -1,15 +1,29 @@
 import React from 'react'
+import { MdOutlineEmail } from "react-icons/md"
+import { IoDocumentTextOutline } from "react-icons/io5"
+import Link from 'next/link'
 
 const Contact = () => {
     return (
-        <section className="flex items-start justify-center min-h-screen bg-gray-950 text-white px-6" id="contact">
-            <div className='text-center'>
+        <footer className="bg-gray-950 text-white pt-10 sm:pt-4" id="contact">
+            <div className='flex flex-col items-center justify-center text-center'>
                 <h1 className='text-4xl md:text-6xl lg:text-6xl font-serif md:py-16 sm:py-8'>I think we should talk</h1>
                 <h1 className='text-4xl md:text-6xl lg:text-6xl font-serif md:py-2 sm:py-2'>Get In Touch!</h1>
-                
-            </div>
+                <div className='flex items-center space-x-2 pt-8 pb-4'>
+                    <MdOutlineEmail />
+                    <a href="mailto:andrewc51205@gmail.com" className="hover:underline text-2xl">
+                        andrewc51205@gmail.com
+                    </a>
+                </div>
+                <div className='flex items-center space-x-2 pt-2 pb-12'>
+                    <IoDocumentTextOutline />
+                    <Link href="/Andrew_Chen_Resume_Updated_9_10(1).pdf" target="_blank" className="hover:underline text-2xl">
+                        <h2>Resume/CV</h2>
+                    </Link>
 
-        </section>
+                </div>
+            </div>
+        </footer>
     )
 }
 
