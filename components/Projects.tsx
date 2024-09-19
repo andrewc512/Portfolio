@@ -12,8 +12,8 @@ const Projects = () => {
                 <h1 className='text-4xl md:text-6xl lg:text-6xl font-serif'>My Projects</h1>
             </div>
             <div className='flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-10'>
-                {projects.map(({title, des, img, sourceCode, demo }) => (
-                    <div>
+                {projects.map(({id, title, des, img, sourceCode, demo }) => (
+                    <div key={id}>
                         <CardContainer className="inter-var">
                             <CardBody className="bg-gray-50 relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                                 <CardItem
