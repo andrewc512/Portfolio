@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { SiCplusplus, SiPython, SiHtml5, SiCss3, SiTypescript, SiTailwindcss, SiNextdotjs, SiFirebase, SiFlutter } from "react-icons/si"
 import { FaJava, FaJs, FaReact, FaGithub } from "react-icons/fa"
 
@@ -6,9 +7,11 @@ const About = () => {
     return (
         <section className="flex flex-wrap items-start justify-center p-8 min-h-screen bg-gray-950 text-white px-6" id="about">
             <div className='flex flex-wrap items-center'>
-                <img
+                <Image 
                     src="/images/IMG_3121.jpg"
                     alt="profile"
+                    width="1000"
+                    height="1000"
                     className="w-72 h-72 rounded-full object-cover"
                 />
                 <div className='p-4'>
