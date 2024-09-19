@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from "next/image";
 import { SiCplusplus, SiPython, SiHtml5, SiCss3, SiTypescript, SiTailwindcss, SiNextdotjs, SiFirebase, SiFlutter } from "react-icons/si"
 import { FaJava, FaJs, FaReact, FaGithub } from "react-icons/fa"
 
@@ -15,9 +14,9 @@ const About = () => {
                 <div className='p-4'>
                     <h2 className='text-4xl font-serif font-bold'>Andrew Chen</h2>
                     <h2 className='text-3xl font-serif'>CS Major undergrad @ University of California, Santa Barbara</h2>
-                    <h2 className='pt-2 text-1xl font-serif'>I'm adept at and passionate about learning new skills and technologies.</h2>
+                    <h2 className='pt-2 text-1xl font-serif'>I&apos;m adept at and passionate about learning new skills and technologies.</h2>
                     <h2 className='text-1xl font-serif'>Currently looking for internships and any job opportunities...</h2>
-                    <h2 className='text-1xl font-serif'>Feel free to <a href='#contact' className='text-blue-300 font-bold hover:underline'> reach out</a> if you'd like to collaborate or discuss a project!</h2>
+                    <h2 className='text-1xl font-serif'>Feel free to <a href='#contact' className='text-blue-300 font-bold hover:underline'> reach out</a> if you&apos;d like to collaborate or discuss a project!</h2>
                 </div>
             </div>
             <div className='p-4'>
