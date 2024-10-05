@@ -18,7 +18,7 @@ const Contact = () => {
                 </div>
                 <div className='flex items-center space-x-2 pt-2 pb-4'>
                     <IoDocumentTextOutline />
-                    <Link href="/Andrew_Chen_Resume_Updated_9_10(1).pdf" target="_blank" className="hover:underline text-2xl">
+                    <Link href="/Andrew_Chen_Resume_Updated_10_2 (1).pdf" target="_blank" className="hover:underline text-2xl">
                         <h2>Resume/CV</h2>
                     </Link>
                 </div>
