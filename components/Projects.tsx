@@ -1,33 +1,61 @@
+"use client"
 import { projects } from '@/data'
+import { useEffect, useState } from 'react';
+import { db } from '@/lib/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import React from 'react'
 import { CardBody, CardContainer, CardItem } from './ui/3d-card'
 import Image from "next/image";
 import Link from "next/link";
 
+type Project = {
+    id: string;
+    title: string;
+    des: string;
+    img: string;
+    sourceCode: string;
+    demo: string;
+  };
 
 const Projects = () => {
+
+    const [projectsData, setProjectsData] = useState<Project[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const querySnapshot = await getDocs(collection(db, 'projects'));
+      const projectsArray = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      })) as Project[];
+      setProjectsData(projectsArray);
+    };
+
+    fetchProjects();
+  }, []);
+
     return (
         <section className='min-h-screen'>
             <div className='flex items-center justify-center pt-8 md:pt-16'>
                 <h1 className='text-4xl md:text-6xl lg:text-6xl font-serif'>My Projects</h1>
             </div>
             <div className='flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-10'>
-                {projects.map(({id, title, des, img, sourceCode, demo }) => (
-                    <div key={id}>
+                {projectsData.map((project) => (
+                    <div key={project.id}>
                         <CardContainer className="inter-var">
                             <CardBody className="bg-gray-50 relative group/card border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                                 <CardItem
                                     translateZ="50"
                                     className="text-xl font-bold text-neutral-600"
                                 >
-                                    {title}
+                                    {project.title}
                                 </CardItem>
                                 <CardItem
                                     as="p"
                                     translateZ="60"
                                     className="text-neutral-500 text-sm max-w-sm mt-2"
                                 >
-                                    {des}
+                                    {project.des}
                                 </CardItem>
                                 <CardItem CardItem
                                     translateZ="100"
@@ -35,7 +63,7 @@ const Projects = () => {
                                     rotateZ={-10}
                                     className="w-full mt-4">
                                     <Image
-                                        src={img}
+                                        src={project.img}
                                         height="1000"
                                         width="1000"
                                         className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
@@ -46,7 +74,7 @@ const Projects = () => {
                                     <CardItem
                                         translateZ={20}
                                         as={Link}
-                                        href={sourceCode}
+                                        href={project.sourceCode}
                                         target="__blank"
                                         className="px-4 py-2 rounded-xl text-xs font-normal"
                                     >
@@ -54,7 +82,7 @@ const Projects = () => {
                                     </CardItem>
                                     <CardItem
                                         translateZ={20}
-                                        href={demo}
+                                        href={project.demo}
                                         as={Link}
                                         target="__blank"
                                         className="px-4 py-2 rounded-xl bg-black text-white text-xs font-bold"

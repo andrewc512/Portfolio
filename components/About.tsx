@@ -5,7 +5,7 @@ import { FaJava, FaJs, FaReact, FaGithub } from "react-icons/fa"
 
 const About = () => {
     return (
-        <section className="flex flex-wrap items-start justify-center p-8 min-h-screen bg-gray-950 text-white px-6" id="about">
+        <section className="flex flex-wrap items-start justify-center p-8 min-h-12 bg-gray-950 text-white px-6" id="about">
             <div className='flex flex-wrap items-center'>
                 <Image 
                     src="/images/IMG_3121.jpg"
