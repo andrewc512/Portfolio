@@ -38,7 +38,7 @@ const Projects = () => {
             <div className='flex items-center justify-center pt-8 md:pt-16'>
                 <h1 className='text-4xl md:text-6xl lg:text-6xl font-serif'>My Projects</h1>
             </div>
-            <div className='flex flex-wrap items-center justify-center p-4 gap-x-16 gap-y-10'>
+            <div className='flex flex-wrap items-center justify-center p-4 gap-x-10'>
                 {projectsData.map((project) => (
                     <div key={project.id}>
                         <CardContainer className="inter-var">
