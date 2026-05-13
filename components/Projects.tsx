@@ -56,7 +56,7 @@ const Projects = () => {
                                 >
                                     {project.des}
                                 </CardItem>
-                                <CardItem CardItem
+                                <CardItem
                                     translateZ="100"
                                     rotateX={20}
                                     rotateZ={-10}
